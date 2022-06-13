@@ -1,0 +1,9 @@
+
+target/
+dbt_packages/
+logs/
+
+
+clickhouse_starschema/target/
+clickhouse_starschema/dbt_packages/
+clickhouse_starschema/logs/
