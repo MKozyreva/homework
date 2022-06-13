@@ -1,0 +1,120 @@
+version: 2
+
+models:
+    - name: Q1_1
+      description: "revenue where toYear(LO_ORDERDATE) = 1993 AND LO_DISCOUNT BETWEEN 1 AND 3 AND LO_QUANTITY < 25;"
+      columns:
+        - name: revenue
+          description: ""
+    - name: Q1_2
+      description: "revenue where toYYYYMM(LO_ORDERDATE) = 199401 AND LO_DISCOUNT BETWEEN 4 AND 6 AND LO_QUANTITY BETWEEN 26 AND 35;"
+      columns:
+        - name: revenue
+          description: ""
+    - name: Q1_3
+      description: "revenue where toISOWeek(LO_ORDERDATE) = 6 AND toYear(LO_ORDERDATE) = 1994 AND LO_DISCOUNT BETWEEN 5 AND 7 AND LO_QUANTITY BETWEEN 26 AND 35;"
+      columns:
+        - name: revenue
+          description: ""   
+    - name: Q2_1
+      description: "revenue by brand where P_CATEGORY = 'MFGR#12' AND S_REGION = 'AMERICA'"
+      columns:
+        - name: revenue
+          description: "" 
+        - name: year
+          description: "" 
+        - name: brand
+          description: ""   
+    - name: Q2_2
+      description: "revenue by brand where P_BRAND >= 'MFGR#2221' AND P_BRAND <= 'MFGR#2228' AND S_REGION = 'ASIA'"
+      columns:
+        - name: revenue
+          description: "" 
+        - name: year
+          description: "" 
+        - name: brand
+          description: ""   
+    - name: Q2_3
+      description: "revenue by brand where P_BRAND = 'MFGR#2239' AND S_REGION = 'EUROPE'"
+      columns:
+        - name: revenue
+          description: "" 
+        - name: year
+          description: "" 
+        - name: brand
+          description: ""             
+    - name: Q3_1
+      description: "revenue by customer and supplier NATION where  C_REGION = 'ASIA' AND S_REGION = 'ASIA' AND year >= 1992 AND year <= 1997"
+      columns:
+        - name: c_nation
+          description: "" 
+        - name: s_nation
+          description: "" 
+        - name: year
+          description: "" 
+        - name: revenue
+          description: "" 
+    - name: Q3_2
+      description: "revenue by customer and supplier city where  C_NATION = 'UNITED STATES' AND S_NATION = 'UNITED STATES' AND year >= 1992 AND year <= 1997"
+      columns:
+        - name: c_city
+          description: "" 
+        - name: s_city
+          description: "" 
+        - name: year
+          description: "" 
+        - name: revenue
+          description: "" 
+    - name: Q3_3
+      description: "revenue by customer and supplier city where (C_CITY = 'UNITED KI1' OR C_CITY = 'UNITED KI5') AND (S_CITY = 'UNITED KI1' OR S_CITY = 'UNITED KI5') AND year >= 1992 AND year <= 1997"
+      columns:
+        - name: c_city
+          description: "" 
+        - name: s_city
+          description: "" 
+        - name: year
+          description: "" 
+        - name: revenue
+          description: "" 
+    - name: Q3_4
+      description: "revenue by customer and supplier city where C_CITY = 'UNITED KI1' OR C_CITY = 'UNITED KI5') AND (S_CITY = 'UNITED KI1' OR S_CITY = 'UNITED KI5') AND toYYYYMM(LO_ORDERDATE) = 199712"
+      columns:
+        - name: c_city
+          description: "" 
+        - name: s_city
+          description: "" 
+        - name: year
+          description: "" 
+        - name: revenue
+          description: ""                 
+    - name: Q4_1
+      description: "profit by year and nation where C_REGION = 'AMERICA' AND S_REGION = 'AMERICA' AND (P_MFGR = 'MFGR#1' OR P_MFGR = 'MFGR#2')"
+      columns:
+        - name: year
+          description: "" 
+        - name: c_nation
+          description: ""          
+        - name: profit
+          description: ""       
+    - name: Q4_2
+      description: "profit by year and nation, category where C_REGION = 'AMERICA' AND S_REGION = 'AMERICA' AND (year = 1997 OR year = 1998) AND (P_MFGR = 'MFGR#1' OR P_MFGR = 'MFGR#2'))"
+      columns:
+        - name: year
+          description: "" 
+        - name: s_nation
+          description: ""   
+        - name: category
+          description: ""           
+        - name: profit
+          description: "" 
+    - name: Q4_3
+      description: "profit by year and city, brand where S_NATION = 'UNITED STATES' AND (year = 1997 OR year = 1998) AND P_CATEGORY = 'MFGR#14'"
+      columns:
+        - name: year
+          description: "" 
+        - name: s_city
+          description: ""   
+        - name: p_brand
+          description: ""           
+        - name: profit
+          description: ""                           

@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: clickhouse_yc
+    schema: db1
+    loader: S3
+    description: "Внешние таблицы yandex cloud в S3 "
+    tables:
+    - name: customer
+      identifier: src_customer
+
+    - name: lineorder
+      identifier: src_lineorder
+
+    - name: part
+      identifier: src_part
+
+    - name: supplier
+      identifier: src_supplier     
+
